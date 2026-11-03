@@ -1,0 +1,10 @@
+node_modules/
+.next/
+data/
+.env*
+test-results/
+playwright-report/
+*.tsbuildinfo
+next-env.d.ts
+# Bronexports met klant- en omzetgegevens nooit committen (lokaal bewaren).
+*.xlsx

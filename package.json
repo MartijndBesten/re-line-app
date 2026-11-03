@@ -1,0 +1,51 @@
+{
+  "name": "re-line-utiliteit",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test:browser": "playwright test",
+    "app": "node scripts/start.mjs",
+    "import:projecthistorie": "tsx scripts/import-projecthistorie.ts",
+    "test:pg": "node scripts/test-pg.mjs -- tsx --test tests/*.test.ts",
+    "gebruiker": "tsx scripts/gebruiker.ts",
+    "migreer:postgres": "tsx scripts/migreer-naar-postgres.ts",
+    "pilot:voorbereiden": "tsx scripts/pilot-voorbereiden.ts",
+    "demo:vullen": "tsx scripts/demo-vullen.ts",
+    "test:team": "playwright test -c playwright.team.config.ts"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "next": "^16.4.3",
+    "nodemailer": "10.1.7",
+    "openid-client": "^6.8.8",
+    "papaparse": "^5.5.3",
+    "pg": "^8.23.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^24.0.0",
+    "@types/nodemailer": "^8.0.2",
+    "@types/papaparse": "^5.3.16",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "prettier": "^3.9.9",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  },
+  "overrides": {
+    "exceljs": {
+      "uuid": "^11.1.1"
+    }
+  }
+}

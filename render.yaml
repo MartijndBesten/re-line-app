@@ -1,0 +1,38 @@
+# Render Blueprint — afgeschermde DEMO met uitsluitend synthetische gegevens (gratis instanties, Frankfurt).
+# Gratis PostgreSQL verloopt na 30 dagen en heeft geen back-ups: NOOIT voor echte TRILUX-gegevens gebruiken.
+services:
+  - type: web
+    name: re-line-demo
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm ci && npm run build
+    startCommand: npm run demo:vullen && npx next start --hostname 0.0.0.0 --port $PORT
+    envVars:
+      - key: RELINE_AUTH
+        value: email
+      - key: RELINE_DEMO
+        value: "1"
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
+      - key: RELINE_DATABASE_URL
+        fromDatabase:
+          name: re-line-demo-db
+          property: connectionString
+      - key: RELINE_PUBLIC_URL      # eerst https://re-line-demo.onrender.com, na DNS https://reline.denckh.nl
+        sync: false
+      - key: RELINE_MAIL_SMTP_URL   # smtp://gebruiker:wachtwoord@host:2525 (465/587 zijn op gratis Render geblokkeerd)
+        sync: false
+      - key: RELINE_MAIL_FROM       # bijv. Re-Line <noreply@denckh.nl>
+        sync: false
+      - key: RELINE_BOOTSTRAP_ADMIN_EMAIL
+        sync: false
+      - key: RELINE_BOOTSTRAP_ADMIN_NAME
+        sync: false
+      - key: RELINE_EMAIL_DOMAINS   # optioneel, bijv. trilux.com (domein geeft nooit zelf toegang)
+        sync: false
+databases:
+  - name: re-line-demo-db
+    plan: free
+    region: frankfurt
+    postgresMajorVersion: "16"
