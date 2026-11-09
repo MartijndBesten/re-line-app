@@ -16,6 +16,10 @@ Deze actuele afspraak geldt voor ChatGPT, Codex, Claude Code en andere ontwikkel
 Dit document geeft uitvoeringsmandaat; het schakelt geen platformpermissies uit en start op zichzelf geen permanent draaiende agent.
 <!-- END AUTONOMIE 2026-11-09 -->
 
+**Centrale kennis bij nieuw werk:** lees eerst [START_HIER.md](https://github.com/MartijndBesten/martijn-ai-workbench/blob/main/bibliotheek/START_HIER.md) op actuele `main`. Daar staan de bouwstenen, lessen, nummervertalingen en bronbranches. Raadpleeg alleen relevante kaarten/lessen; integreer bruikbare nieuwe kennis zelfstandig terug. Een ontbrekende private verbinding eerst onderzoeken, alleen de ontbrekende toegang melden als die echt nodig is.
+
+
+
 # Projectinstructies
 
 Lees de actuele README, projectbesluiten en HANDOFF/status in deze repository vóór uitvoering. Gebruik de bestaande broncode- en publicatieroute; controleer welke branch leidend is.
